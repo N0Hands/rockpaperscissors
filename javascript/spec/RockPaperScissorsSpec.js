@@ -22,14 +22,12 @@ describe("Rock-Paper-Scissors", function() {
 
         it('scissors', function() {
           player2.picks('scissors');
+          expect(game.winner()).toEqual([player1, 'rock crushes scissors']);
         });
 
         it('lizard', function() {
           player2.picks('lizard');
-        });
-
-        afterEach(function() {
-          expect(game.winner()).toBe(player1);
+          expect(game.winner()).toEqual([player1, 'rock crushes lizard']);
         });
 
       });
@@ -38,14 +36,12 @@ describe("Rock-Paper-Scissors", function() {
 
         it('paper', function() {
           player2.picks('paper');
+          expect(game.winner()).toEqual([player2, 'paper covers rock']);
         });
 
         it('spock', function() {
           player2.picks('spock');
-        });
-
-        afterEach(function() {
-          expect(game.winner()).toBe(player2);
+          expect(game.winner()).toEqual([player2, 'spock vaporises rock']);
         });
 
       });
@@ -64,14 +60,12 @@ describe("Rock-Paper-Scissors", function() {
 
         it('rock', function() {
           player2.picks('rock');
+          expect(game.winner()).toEqual([player1, 'paper covers rock']);
         });
 
         it('spock', function() {
           player2.picks('spock');
-        });
-
-        afterEach(function() {
-          expect(game.winner()).toBe(player1);
+          expect(game.winner()).toEqual([player1, 'paper disproves spock']);
         });
 
       });
@@ -80,14 +74,12 @@ describe("Rock-Paper-Scissors", function() {
 
         it('lizard', function() {
           player2.picks('lizard');
+          expect(game.winner()).toEqual([player2, 'lizard eats paper']);
         });
 
         it('scissors', function() {
           player2.picks('scissors');
-        });
-
-        afterEach(function() {
-          expect(game.winner()).toBe(player2);
+          expect(game.winner()).toEqual([player2, 'scissors cuts paper']);
         });
 
       });
@@ -106,14 +98,12 @@ describe("Rock-Paper-Scissors", function() {
 
         it('paper', function() {
           player2.picks('paper');
+          expect(game.winner()).toEqual([player1, 'lizard eats paper']);
         });
 
         it('spock', function() {
           player2.picks('spock');
-        });
-
-        afterEach(function() {
-          expect(game.winner()).toBe(player1);
+          expect(game.winner()).toEqual([player1, 'lizard poisons spock']);
         });
 
       });
@@ -122,14 +112,12 @@ describe("Rock-Paper-Scissors", function() {
 
         it('rock', function() {
           player2.picks('rock');
+          expect(game.winner()).toEqual([player2, 'rock crushes lizard']);
         });
 
         it('scissors', function() {
           player2.picks('scissors');
-        });
-
-        afterEach(function() {
-          expect(game.winner()).toBe(player2);
+          expect(game.winner()).toEqual([player2, 'scissors decapitates lizard']);
         });
 
       });
@@ -148,14 +136,12 @@ describe("Rock-Paper-Scissors", function() {
 
         it('rock', function() {
           player2.picks('rock');
+          expect(game.winner()).toEqual([player1, 'spock vaporises rock']);
         });
 
         it('scissors', function() {
           player2.picks('scissors');
-        });
-
-        afterEach(function() {
-          expect(game.winner()).toBe(player1);
+          expect(game.winner()).toEqual([player1, 'spock smashes scissors']);
         });
 
       });
@@ -164,14 +150,13 @@ describe("Rock-Paper-Scissors", function() {
 
         it('paper', function() {
           player2.picks('paper');
+          expect(game.winner()).toEqual([player2, 'paper disproves spock']);
         });
+
 
         it('lizard', function() {
           player2.picks('lizard');
-        });
-
-        afterEach(function() {
-          expect(game.winner()).toBe(player2);
+          expect(game.winner()).toEqual([player2, 'lizard poisons spock']);
         });
 
       });
