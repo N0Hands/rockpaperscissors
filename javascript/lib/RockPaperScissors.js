@@ -18,11 +18,13 @@ Game.prototype.winner = function() {
 	}
 
 	var canBeBeatenBy = new Array();
-	canBeBeatenBy['rock'] = 'scissors';
-	canBeBeatenBy['paper'] = 'rock';
-	canBeBeatenBy['scissors'] = 'paper';
+	canBeBeatenBy['rock'] = ['scissors', 'lizard'];
+	canBeBeatenBy['paper'] = ['rock', 'spock'];
+	canBeBeatenBy['scissors'] = ['paper', 'lizard'];
+	canBeBeatenBy['lizard'] = ['paper', 'spock'];
+	canBeBeatenBy['spock'] = ['scissors', 'rock'];
 
-	if(player2.pick == canBeBeatenBy[player1.pick]) {
+	if(canBeBeatenBy[player1.pick].indexOf(player2.pick) >= 0) {
 		return player1;
 	} else {
 		return player2;
