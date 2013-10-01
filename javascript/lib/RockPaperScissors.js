@@ -12,7 +12,10 @@ function Game(player1, player2) {
 }
 
 Game.prototype.winner = function() {
-	if(player1.pick == player2.pick) { return null; }
+	var player1 = this.player1;
+	var player2 = this.player2;
+
+	if(player1.pick == player2.pick) { return [null, "draw"]; }
 
 	var crazyHands = {
 		'rock': {
@@ -21,18 +24,18 @@ Game.prototype.winner = function() {
 		},
 		'paper': {
 			'rock': 'covers',
-			'spock': 'disproves'
+			'Spock': 'disproves'
 		},
 		'scissors': {
 			'paper': 'cuts',
 			'lizard': 'decapitates'
 		},
-		'spock': {
+		'Spock': {
 			'scissors': 'smashes',
 			'rock': 'vaporises'
 		},
 		'lizard': {
-			'spock': 'poisons',
+			'Spock': 'poisons',
 			'paper': 'eats'
 		}
 	}

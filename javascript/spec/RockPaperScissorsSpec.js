@@ -153,7 +153,6 @@ describe("Rock-Paper-Scissors", function() {
           expect(game.winner()).toEqual([player2, 'paper disproves spock']);
         });
 
-
         it('lizard', function() {
           player2.picks('lizard');
           expect(game.winner()).toEqual([player2, 'lizard poisons spock']);
